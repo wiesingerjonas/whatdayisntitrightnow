@@ -8,6 +8,7 @@ function showDay() {
 
   dayElement.textContent = day;
   dayElement.title = day;
+  document.title = day;
 }
 
 function getDay() {
