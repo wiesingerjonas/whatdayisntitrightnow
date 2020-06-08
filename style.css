@@ -1,21 +1,29 @@
-* {
-    font-family: 'Jost', sans-serif;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Jost", sans-serif;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 h1 {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 span {
-    font-size: 4em;
-    background-color: #666666;
-    border-radius: 0.2em;
-    padding: 0.5em;
-    color: white;
+  font-size: 4em;
+  background-color: #666666;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  color: white;
 }

@@ -1,32 +1,33 @@
-addEventListener('load', () => {
-    showDay();
+window.addEventListener('load', () => {
+  showDay();
 });
 
 function showDay() {
+  const day = getDay();
+  const dayElement = document.getElementById('day');
 
-    const day = getDay();
-
-    let dayElement = document.getElementById('day');
-
-    dayElement.innerText = day;
-    document.title = day;
-
+  dayElement.textContent = day;
+  dayElement.title = day;
 }
 
 function getDay() {
+  const posneg = Math.round(Math.random());
+  let random = Math.floor(Math.random() * 6) + 1;
 
-    let random = Math.floor(Math.random() * (6) ) + 1;
-    let posneg = Math.round(Math.random());
+  if (posneg === 0) {
+    random = -random;
+  }
 
-    if(posneg === 0) {
-        random = -random;
-    }
+  const day = new Date();
 
-    let today = new Date();
-    const day = new Date(today);
-    day.setDate(today.getDate() + random);
+  day.setDate(day.getDate() + random);
 
-    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
 
-    return new Intl.DateTimeFormat('en-GB', options).format(day);
+  return new Intl.DateTimeFormat('en-GB', options).format(day);
 }
